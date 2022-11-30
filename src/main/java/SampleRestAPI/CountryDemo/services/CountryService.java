@@ -3,12 +3,14 @@ package SampleRestAPI.CountryDemo.services;
 import SampleRestAPI.CountryDemo.beans.Country;
 import SampleRestAPI.CountryDemo.controllers.AddResponse;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 @Component
+@RequestMapping
 public class CountryService {
     static HashMap<Integer, Country> countryIdMap;  // to create id
 
@@ -80,7 +82,7 @@ public class CountryService {
     public AddResponse deleteCountry(int id) {
         countryIdMap.remove(id);
         AddResponse addResponse = new AddResponse();
-        addResponse.setMsg("Country Deleted!...");
+        addResponse.setMsg("Country Deleted Successfully!...");
         addResponse.setId(id);
         return addResponse;
     }

@@ -2,55 +2,53 @@ package SampleRestAPI.CountryDemo.controllers;
 
 
 import SampleRestAPI.CountryDemo.beans.Country;
-import SampleRestAPI.CountryDemo.beans.Employee;
 import SampleRestAPI.CountryDemo.services.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 public class CountryController {
-   /* @Autowired
+    @Autowired
     CountryService countryService;
 
-    @GetMapping("/getcountries")
+    @GetMapping("/api/getcountries")
     public List getCountries() {
         return countryService.getAllCountries();
     }
 
-    @GetMapping("/getcountries/{id}")
+    @GetMapping("/api/getcountries/{id}")
     public Country getCountryById(@PathVariable(value = "id") int id) {
         return countryService.getCountryByID(id);
 
     }
 
-    @GetMapping("/getcountries/countryname")
+    @GetMapping("/api/getcountries/countryname")
     public Country getCountryByName(@RequestParam(value = "name") String countryName) {
         return countryService.getCountryByName(countryName);
 
     }
 
-    @PostMapping("/addcountry")
+    @PostMapping("/api/addcountry")
     public Country addCountry(@RequestBody Country country) {
         return countryService.addCountry(country);
     }
 
-    @PutMapping("/updatecountry")
+    @PutMapping("/api/updatecountry")
     public Country updateCountry(@RequestBody Country country) {
 
         return countryService.updateCountry(country);
 
     }
 
-    @DeleteMapping("deletecountry/{id}")
+    @DeleteMapping("api/deletecountry/{id}")
     public AddResponse deleteCountry(@PathVariable(value = "id")int id){
 
         return  countryService.deleteCountry(id);
-    } */
+    }
 
+/*
     @Autowired
     CountryService countryService;
 
@@ -86,5 +84,5 @@ public class CountryController {
     public ResponseEntity<HttpStatus> deleteCountry(@RequestParam long id){
         return  new ResponseEntity<HttpStatus>(HttpStatus.NO_CONTENT);
 
-    }
+    } */
 }

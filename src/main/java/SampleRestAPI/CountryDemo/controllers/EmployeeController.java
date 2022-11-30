@@ -5,6 +5,7 @@ import SampleRestAPI.CountryDemo.beans.Country;
 import SampleRestAPI.CountryDemo.beans.Employee;
 import SampleRestAPI.CountryDemo.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,44 +14,48 @@ import java.util.List;
 
 @RestController
 public class EmployeeController {
-    /*@Autowired
+    @Autowired
     EmployeeService employeeService;
 
-    @GetMapping("/getallemployees")
+    @GetMapping("/api/getallemployees")
     public List getAllEmployees(){
         return employeeService.getAllEmployees();
     }
-    @GetMapping("/getemployee/{id}")
+    @GetMapping("/api/getemployee/{id}")
+    // http://localhost:3434/api/getemployee/2
     public Employee getEmployeeById(@PathVariable(value = "id")int id){
         return  employeeService.getEmployeeById(id);
     }
-    @GetMapping("/getemployee/employeename")
+    @GetMapping("/api/getemployee/employeename")
+    // http://localhost:3434/api/getemployee/employeename/?name=Nedim
     public Employee getEmployeeByName(@RequestParam(value = "name") String employeeName) {
         return employeeService.getEmployeeByFirstName(employeeName);
 
     }
-    @GetMapping("/getemployee/employeelastname")
-    public Employee getEmployeeByLastName(@RequestParam(value = "name") String employeeLastname) {
+    @GetMapping("/api/getemployee/employeelastname")
+    //  http://localhost:3434/api/getemployee/employeelastname/?lastname=Yilmaz
+    public Employee getEmployeeByLastName(@RequestParam(value = "lastname") String employeeLastname) {
         return employeeService.getEmployeeByLastName(employeeLastname);
 
     }
 
-    @PostMapping("/addemployee")
+    @PostMapping("/api/addemployee")
     public Employee addEmployee(@RequestBody Employee employee) {
         return employeeService.addEmployee(employee);
     }
 
-    @PutMapping("/updateemployee")
+    @PutMapping("/api/updateemployee")
     public Employee updateEmployee(@RequestBody Employee employee) {
 
         return employeeService.updateEmployee(employee);
     }
 
-    @DeleteMapping("deleteemployee/{id}")
+    @DeleteMapping("/api/deleteemployee/{id}")
     public AddResponse deleteCEmployee(@PathVariable(value = "id")int id){
 
         return  employeeService.deleteEmployee(id);
-    } */
+    }
+    /*
     @Autowired
     EmployeeService employeeService;
 
@@ -89,4 +94,5 @@ public class EmployeeController {
 
         return  new ResponseEntity<HttpStatus>(HttpStatus.NO_CONTENT);
     }
+    */
 }
